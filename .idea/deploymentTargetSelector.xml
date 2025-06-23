@@ -4,7 +4,7 @@
     <selectionStates>
       <SelectionState runConfigName="QrGenerator.app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-06-21T15:06:41.463897900Z">
+        <DropdownSelection timestamp="2025-06-23T14:55:31.196669700Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\ossol\.android\avd\Medium_Phone.avd" />

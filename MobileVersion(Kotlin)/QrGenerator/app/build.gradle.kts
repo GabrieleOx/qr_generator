@@ -60,4 +60,5 @@ dependencies {
     implementation(libs.zxing.javase)
     implementation(libs.core)
     testImplementation(libs.junit.jupiter.engine)
+    implementation("com.github.skydoves:colorpicker-compose:1.1.2")
 }
