@@ -1,4 +1,4 @@
-package com.generator;
+package com.me;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -24,8 +24,8 @@ import com.google.zxing.client.j2se.MatrixToImageConfig;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 
-public final class App {
-    private App() {
+public final class Main {
+    private Main() {
     }
 
     public static void main(String[] args) throws WriterException, IOException {
