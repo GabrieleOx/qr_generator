@@ -1,0 +1,2 @@
+mvn clean package -DskipTests -Dcheckstyle.skip=true
+(Skippa i controlli di stile del codice: fa schifo....)
