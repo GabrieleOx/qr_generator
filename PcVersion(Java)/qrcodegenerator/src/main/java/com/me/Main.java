@@ -29,10 +29,14 @@ public final class Main {
     }
 
     public static void main(String[] args) throws WriterException, IOException {
+        String percorsoBase;
+        if(System.getProperty("os.name").contains("Windows"))
+            percorsoBase = System.getProperty("user.home") + "\\Desktop";
+        else percorsoBase = System.getProperty("user.home") + "/Desktop";
         Color [] colors = new Color[2];
         JFrame windowFrame = new JFrame("QR Generator");
         JLabel pathLabel = new JLabel("Dove?"), linkLabel = new JLabel("Link:"), fileNameLabel = new JLabel("Nome del file:"), colorsLabel = new JLabel("Colori qr code:");
-        JTextField linkTextField = new JTextField("www.esempio.com"), fileNameTextField = new JTextField("ExampleQrCode"), pathTextField = new JTextField("_Path_");
+        JTextField linkTextField = new JTextField("www.esempio.com"), fileNameTextField = new JTextField("ExampleQrCode"), pathTextField = new JTextField(percorsoBase);
         JFileChooser pathChooser = new JFileChooser("/", FileSystemView.getFileSystemView());
         JColorChooser colorChooser = new JColorChooser();
         JButton sendButton = new JButton("Crea"), pathButton = new JButton("Seleziona"), qrcodeColorButton = new JButton("Colore del pattern"), backgroundColorButton = new JButton("Colore dello sfondo");
@@ -107,7 +111,9 @@ public final class Main {
         sendButton.addActionListener(ActionListener -> {
             String path, link = linkTextField.getText(), name = fileNameTextField.getText();
 
-            path = pathTextField.getText() + '\\' + name + ".png";
+            if(System.getProperty("os.name").contains("Windows"))
+                path = pathTextField.getText() + '\\' + name + ".png";
+            else path = pathTextField.getText() + '/' + name + ".png";
 
             try {
                 generateQr(path, link, windowFrame, colors);
